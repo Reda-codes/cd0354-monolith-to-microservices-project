@@ -23,17 +23,17 @@ script:
   - docker build -t reverseproxy ./udagram-reverseproxy
 
   #Tagging
-  - docker tag udagram-api-feed redacodes/udagram-api-feed:v10
-  - docker tag udagram-api-user redacodes/udagram-api-user:v8
-  - docker tag udagram-frontend redacodes/udagram-frontend:v4
-  - docker tag reverseproxy redacodes/reverseproxy:v1
+  - docker tag udagram-api-feed redacodes/udagram-api-feed:v20
+  - docker tag udagram-api-user redacodes/udagram-api-user:v20
+  - docker tag udagram-frontend redacodes/udagram-frontend:v20
+  - docker tag reverseproxy redacodes/reverseproxy:v20
 
 # Push
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   #Push
-  - docker push redacodes/udagram-api-feed:v10
-  - docker push redacodes/udagram-api-user:v8
-  - docker push redacodes/udagram-frontend:v4
-  - docker push redacodes/reverseproxy:v1
+  - docker push redacodes/udagram-api-feed:v20
+  - docker push redacodes/udagram-api-user:v20
+  - docker push redacodes/udagram-frontend:v20
+  - docker push redacodes/reverseproxy:v20
